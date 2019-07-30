@@ -1,0 +1,10 @@
+D:\VyazaninoCOM\VyazaninoCOM\bin\VyazaninoCOM.dll.config
+D:\VyazaninoCOM\VyazaninoCOM\bin\VyazaninoCOM.dll
+D:\VyazaninoCOM\VyazaninoCOM\bin\VyazaninoCOM.pdb
+D:\VyazaninoCOM\VyazaninoCOM\obj\Debug\VyazaninoCOM.csprojResolveAssemblyReference.cache
+D:\VyazaninoCOM\VyazaninoCOM\obj\Debug\VyazaninoCOM.dll
+D:\VyazaninoCOM\VyazaninoCOM\obj\Debug\VyazaninoCOM.pdb
+D:\VyazaninoCOM\VyazaninoCOM\bin\System.Runtime.Serialization.dll
+D:\VyazaninoCOM\VyazaninoCOM\bin\System.ServiceModel.dll
+D:\VyazaninoCOM\VyazaninoCOM\bin\System.ServiceModel.Web.dll
+D:\VyazaninoCOM\VyazaninoCOM\bin\Newtonsoft.Json.dll
