@@ -14,7 +14,7 @@ namespace VyazaninoCOM
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            Application["ConnectionString"] = @"Data Source=ms-sql-8.in-solve.ru;Initial Catalog=1gb_vyazanino1;User Id = 1gb_mbou-sosh-4; Password = 3fe27510czx";
+            Application["ConnectionString"] = @"*****";
            // Application["ConnectionString"] = @"Data Source=UCHENIK12\SQLEXPRESS;Initial Catalog=Vyazanino;Trusted_Connection=True;";
         }
 
