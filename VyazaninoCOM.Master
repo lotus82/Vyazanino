@@ -1,0 +1,425 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="VyazaninoCOM.master.cs" Inherits="VyazaninoCOM.VyazaninoCOM" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head runat="server">
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(54170350, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/54170350" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+        <!-- Meta -->
+		<meta name="yandex-verification" content="28474a5fa82a9227" />
+		<meta charset="utf-8"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+		<meta name="Description" content="Интернет гипермаркет вязаных вещей. Вязаная одежда. Вязание."/>
+		<meta name="author" content="Vyazanino"/>
+	    <meta name="keywords" content="Вязание, Вязание на заказ, Вязаные вещи, Модные вязаные вещи, Вязание спицами, Вязание крючком, Вязаное кружево, Вязание в стиле, Макраме, Одежда больших размеров"/>
+	    <meta name="robots" content="all"/>
+        <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico"/>
+        <title>Вязанино</title>
+        <!-- Bootstrap Core CSS -->
+	    <link rel="stylesheet" href="/assets/css/bootstrap.min.css"/>
+	    <!-- Customizable CSS -->
+	    <link rel="stylesheet" href="/assets/css/main.css"/>
+	    <link rel="stylesheet" href="/assets/css/blue.css"/>
+	    <link rel="stylesheet" href="/assets/css/owl.carousel.css"/>
+		<link rel="stylesheet" href="/assets/css/owl.transitions.css"/>
+		<link rel="stylesheet" href="/assets/css/animate.min.css"/>
+		<link rel="stylesheet" href="/assets/css/rateit.css"/>
+		<link rel="stylesheet" href="/assets/css/bootstrap-select.min.css"/>
+        <!-- Icons/Glyphs -->
+		<link rel="stylesheet" href="/assets/css/font-awesome.css"/>
+        <!-- ШРИФТЫ --> 
+		<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'/>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,600italic,700,700italic,800' rel='stylesheet' type='text/css'/>
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'/>
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
+</head>
+<body class="cnt-home">
+    <form id="form1" runat="server">
+        <div>
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+            <!-- ============================================== HEADER ========================================================================================================= -->
+            <header class="header-style-1">
+                
+                <!-- ============================================== ВЕРХНЕЕ МЕНЮ =============================================================================================== -->
+                <div class="top-bar animate-dropdown" style="background-color:#333333; padding-top:5px; padding-bottom:5px;">
+                    <div class="container">
+                        <div class="header-top-inner">
+
+                            <div class="cnt-block" style="display: inline-block;background-color:#ff0000;border-radius:2px 2px 2px 2px;border:0px solid white; max-width:150px;min-width:50px;text-align:center;padding:0px 10px 0px 10px;margin:0px 0px 0px 10px;">
+                                <ul class="list-unstyled list-inline" >
+                                    <li class="dropdown dropdown-small" >
+                                        <asp:LoginView ID="LoginView1" runat="server">
+                                            <AnonymousTemplate>
+                                                <a id="HeadLoginStatus" runat="server" href="/Login.aspx" style="color:white;"><span style="color:#333333;"><i class="icon fa fa-lock"></i></span><b>&nbsp;&nbsp;Войти</b></a>
+                                            </AnonymousTemplate>
+                                            <LoggedInTemplate>
+                                                <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown"> <span class="bold"><span class="value"><b><asp:LoginName ForeColor="white" ID="HeadLoginName" runat="server" /></b></span><b class="caret" style="color:white;"></b></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="/Users/User_Profile.aspx"><i class="icon fa fa-user" style="color:#ff0000;"></i>&nbsp;Профиль</a></li>
+                                                    <li><a href="/Users/User_Cart.aspx"><i class="icon fa fa-cart-arrow-down" style="color:#ff0000;"></i>&nbsp;Корзина</a></li>
+                                                    <li><a href="/Users/User_Wishlist.aspx"><i class="icon fa fa-heart" style="color:#ff0000;"></i>&nbsp;Нравится</a></li>
+                                                    <hr style="padding:0px 0px 0px 0px;margin:10px 0px 0px 0px;"/>
+                                                    <li><a href="#"><asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutPageUrl="~/Default.aspx" LogoutText="<i class='icon fa fa-unlock' style='color:#ff0000;'></i>&nbsp;Выйти" /></a></li>
+                                                </ul>
+                                            </LoggedInTemplate>
+                                        </asp:LoginView>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="cnt-block" style="display: inline-block;background-color:#ff0000;border-radius:2px 2px 2px 2px; border:0px solid white;max-width:200px; min-width:50px;text-align:center;padding:0px 10px 0px 10px;margin:0px 0px 0px 0px;">
+                                <ul class="list-unstyled list-inline">
+                                    <%--<li class="dropdown dropdown-small" >
+                                        <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown"><span class="value" style="color:#157ed2;"><b><i class="icon fa fa-rub" style="color:#157ed2;"></i>&nbsp;РУБ</b></span><b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#"><i class="icon fa fa-rub" style="color:#157ed2;"></i>&nbsp;РУБ</a></li>
+                                            <li><a href="#"><i class="icon fa fa-dollar" style="color:#157ed2;"></i>&nbsp;USD</a></li>
+                                        </ul>
+                                    </li>--%>
+
+                                    <li class="dropdown dropdown-small" >
+                                        <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown"><span class="value" style="color:white;"><b><i class="icon fa fa-language" style="color:#333333;"></i>&nbsp;&nbsp;Ru</b></span><b class="caret" style="color:white;"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Русский</a></li>
+                                            <li><a href="#">English</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                <%--<hr style="margin-bottom:0px;margin-top:0px;background-color:#ff0000;height:2px;"/>--%>
+                </div>
+                <!-- ============================================== ВЕРХНЕЕ МЕНЮ : КОНЕЦ ======================================================================================= -->
+                
+                <!-- ============================================== СРЕДНЕЕ МЕНЮ =============================================================================================== -->
+                <div class="main-header" style="padding-bottom:5px;">
+                    <div class="container">
+                        <div class="row">
+                            <!-- ============================================================= ЛОГОТИП ========================================================================= -->
+                            <div class="col-xs-12 col-sm-12 col-md-3 logo-holder" style="margin-bottom:0px;margin-top:5px; ">
+                                <div class="logo">
+                                    <a href="/Default.aspx">
+                                        <img src="/assets/images/logo.jpg" height="60" width="260" alt="Вязанино" />
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- ============================================================= ЛОГОТИП : КОНЕЦ ================================================================= -->
+                            
+                            <!-- ============================================================= ПОИСК =========================================================================== -->
+                            <div class="col-xs-12 col-sm-12 col-md-5 top-search-holder">
+                                <div class="search-area" style="border:1px solid #ff0000;background-color:white;padding:0px 0px 0px 0px;">
+                                    <div class="control-group" style="white-space:nowrap;padding:0px 0px 0px 0px;margin:0px 0px 0px 0px;display:flex;">
+                                        <input class="search-field" style="width:80%;background-color:white;margin:0px 0px 0px 0px;padding:10px; border:0px solid red;" placeholder="Поиск..." />
+                                        <a class="btn btn-primary " style="display:inline;border-radius:0px 0px 0px 0px; width:20%;padding:10px;height:100%; margin:0px 0px 0px 0px;border:0px solid yellow;background-color:#ff0000;" href="#"><b>Найти</b></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ============================================================= ПОИСК : КОНЕЦ =================================================================== -->
+                            
+                            <!-- ============================================================= КОРЗИНА ========================================================================= -->
+                            <div class="col-xs-6 col-sm-6 col-md-2 animate-dropdown top-cart-row" style="padding-top:2px;padding-bottom:0px; margin-top:5px;">
+                                <div class="dropdown dropdown-cart">
+                                    <a href="Cart_Unreg.aspx" class="dropdown-toggle lnk-cart" runat="server" id="link_cart">
+                                        <div class="items-cart-inner">
+                                            <div class="basket" style="font-size:16px;padding:12px 12px 0px 15px;color:#333333;">
+                                                <b><i class="glyphicon glyphicon-shopping-cart"></i></b>
+                                            </div>
+                                            <div class="basket-item-count">
+                                                <span class="count"><asp:Label ID="Label_Cart_Total_Count" runat="server" Text="0"></asp:Label></span>
+                                            </div>
+                                            <div class="total-price-basket">
+                                                <span class="total-price">
+                                                    <span class="sign" style="color:white;">&#8381;</span>&nbsp;<span class="value"><asp:Label ID="Label_Cart_Total_Summ" runat="server" ForeColor="White" Text="0.00"></asp:Label></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    
+                                </div>
+                            </div>
+                            <!-- ============================================================= КОРЗИНА : КОНЕЦ ================================================================= -->
+
+                            <!-- ============================================================= РЕГИСТРАЦИЯ МАГАЗИНА ============================================================ -->
+                            <div class="col-xs-6 col-sm-6 col-md-2 animate-dropdown top-cart-row" style="padding-top:5px;margin-top:2px;">
+                                <div class="dropdown dropdown-cart">
+                                    <a href="/Shop_Registration.aspx" class="dropdown-toggle lnk-cart" style="color:white;background-color:#ff0000;border:0px;">
+                                        <div class="items-cart-inner" style="background-color:#ff0000;" >
+                                            <div class="basket" style="font-size:16px;padding:8px 10px 0px 15px;border:0px;">
+                                                <span style="color:#333333;"><i class="icon fa fa-home" aria-hidden="true"></i></span>
+                                            </div>
+                                           <div class="total-price-basket" style="background-color:#ff0000;padding:3px 10px 3px 10px;margin:0px 0px 2px 0px;border-top-right-radius:5px;border-bottom-right-radius:5px;">
+                                                <span class="value" style="font-size:12px;font-weight:normal;">Создать<br/>магазин</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- ============================================================= РЕГИСТРАЦИЯ МАГАЗИНА : КОНЕЦ ==================================================== -->
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================== СРЕДНЕЕ МЕНЮ : КОНЕЦ ======================================================================================= -->
+
+                <!-- ============================================== ГЛАВНОЕ МЕНЮ =============================================================================================== -->
+                <div class="header-nav animate-dropdown">
+                    <div class="container">
+                        <div class="yamm navbar navbar-default" role="navigation">
+                            <div class="navbar-header">
+                                <button data-target="#mc-horizontal-menu-collapse" style="margin-right:0px;" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                                    
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    
+                                </button>
+                            <button data-target="#mc-horizontal-menu-collapse" data-toggle="collapse" class="navbar-toggle collapsed" type="button" style="padding:8px 0px 0px 0px;">
+                            <span style="color:white;text-align:left;font-weight:700;margin-left:0px;padding-left:0px;font-size:14px;">ОСНОВНОЕ МЕНЮ</span>
+                                </button>
+                            </div>
+                            <div class="nav-bg-class">
+                                <div class="navbar-collapse collapse" id="mc-horizontal-menu-collapse">
+                                    <div class="nav-outer">
+                                        <ul class="nav navbar-nav">
+                                            <li class="dropdown yamm-fw">
+                                                <a href="/Default.aspx">Главная</a>
+                                            </li>
+                                            <li class="dropdown yamm mega-menu">
+                                                <a href="/About.aspx">О компании</a>
+                                            </li>
+                                            <li class="dropdown mega-menu">
+                                                <a href="/Catalog.aspx">Каталог</a>
+                                            </li>
+                                            <%--<li class="dropdown hidden-sm">
+                                                <a href="/Shops.aspx">Магазины</a>
+                                            </li>
+                                            <li class="dropdown hidden-sm">
+                                                <a href="/#">Покупателям</a>
+                                            </li>--%>
+                                            <li class="dropdown">
+                                                <a href="/Blog.aspx">Блог</a>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a href="/Cooperation.aspx">Сотрудничество</a>
+                                            </li>
+                                            <%--<li class="dropdown  navbar-right special-menu">
+                                                <a href="#">Создать магазин</a>
+                                            </li>--%>
+                                            <%--<li class="dropdown">
+                                                <a href="/#">Доставка и оплата</a>
+                                            </li>--%>
+                                        </ul>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================== ГЛАВНОЕ МЕНЮ : КОНЕЦ ======================================================================================= -->
+            
+            </header>
+            <!-- ============================================== HEADER : КОНЕЦ ================================================================================================= -->
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+            </asp:ContentPlaceHolder>
+            
+            <!-- ============================================== FOOTER =========================================================================================================== -->
+            <footer id="footer" class="footer color-bg">
+                <div class="footer-bottom">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                <div class="module-heading">
+                                    <h4 class="module-title">Контакты</h4>
+                                </div>
+                                <div class="module-body">
+                                    <ul class="toggle-footer" style="">
+                                        <%--<li class="media">
+                                            <div class="pull-left">
+                                                <span class="icon fa-stack fa-lg">
+                                                    <i class="fa fa-map-marker fa-stack-1x fa-info"></i>
+                                                </span>
+                                            </div>
+                                            <div class="media-body">
+                                                <p>ИП Вязникова Нина Васильевна<br/>
+                                                ОГРНИП: 319645100047738 <br/>
+                                                    ИНН: 381913646349<br/>
+                                                </p>
+                                            </div>
+                                        </li>--%>
+                                        <li class="media">
+                                            <div class="pull-left">
+                                                <span class="icon fa-stack fa-lg">
+                                                    <i class="fa fa-map-marker fa-stack-1x fa-inverse"></i>
+                                                </span>
+                                            </div>
+                                            <div class="media-body">
+                                                <p>РФ, Саратовская обл., Балаково</p>
+                                            </div>
+                                        </li>
+                                        <li class="media">
+                                            <div class="pull-left">
+                                                <span class="icon fa-stack fa-lg">
+                                                    <i class="fa fa-mobile fa-stack-1x fa-inverse"></i>
+                                                </span>
+                                            </div>
+                                            <div class="media-body">
+                                                <p>
+                                                    +7(927) 132-86-70
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="media">
+                                            <div class="pull-left">
+                                                <span class="icon fa-stack fa-lg">
+                                                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                                                </span>
+                                            </div>
+                                            <div class="media-body">
+                                                <span><a href="#">vyazanino@mail.ru</a></span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                <div class="module-heading">
+                                    <h4 class="module-title">Покупателям</h4>
+                                </div>
+                                <div class="module-body">
+                                    <ul class='list-unstyled'>
+                                        <li class="first"><a href="Catalog.aspx" title="Каталог">Каталог</a></li>
+                                        <li><a href="Shops.aspx" title="Магазины">Магазины</a></li>
+                                        <li><a title="Как покупать" href="#">Как покупать</a></li>
+                                        <li><a href="#" title="Отследить товар">Отследить товар</a></li>
+                                        <li class="last"><a href="#" title="Служба поддержки">Служба поддержки</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                <div class="module-heading">
+                                    <h4 class="module-title">Продавцам</h4>
+                                </div>
+                                <div class="module-body">
+                                    <ul class='list-unstyled'>
+                                        <li class="first"><a href="Cooperation.aspx" title="Сотрудничество">Сотрудничество</a></li>
+                                        <li><a title="Вакансии" href="#">Вакансии</a></li>
+                                        <li><a title="Как продавать" href="#">Как продавать</a></li>
+                                        <li class="last"><a title="Статистика" href="#">Статистика</a></li>
+                                        <li class="last"><a href="Support.aspx" title="Служба поддержки">Служба поддержки</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                <div class="module-heading">
+                                    <h4 class="module-title">О компании</h4>
+                                </div>
+                                <div class="module-body">
+                                    <ul class='list-unstyled'>
+                                        <li class="first"><a href="About.aspx" title="О компании">О компании</a></li>
+                                        <li><a href="#" title="Отзывы клиентов">Отзывы клиентов</a></li>
+                                        <li><a href="#" title="Рекламодателям">Рекламодателям</a></li>
+                                        <li><a href="#" title="СМИ о нас">СМИ о нас</a></li>
+                                        <li class=" last"><a href="#" title="Новости">Новости</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright-bar" style="padding-bottom:5px;">
+                    <div class="container" >
+                        <div class="col-xs-12 col-sm-6 no-padding social">
+                            <ul class="link">
+                                
+                                <li class="pull-left"><a target="_blank" rel="nofollow" href="#" title="Odnoklassniki"><span><i class="icon fa fa-odnoklassniki" aria-hidden="true"></i></span></a></li>
+                                <li class="pull-left"><a target="_blank" rel="nofollow" href="#" title="Instagram"><span><i class="icon fa fa-instagram" aria-hidden="true"></i></span></a></li>
+                                <li class="pull-left"><a target="_blank" rel="nofollow" href="#" title="VK"><span><i class="icon fa fa-vk" aria-hidden="true"></i></span></a></li>
+                                <li class="pull-left" style="height:50px;"><a target="_blank" rel="nofollow" href="#" title="Facebook"><span><i class="icon fa fa-facebook" aria-hidden="true"></i></span></a></li>
+                                <li class="pull-left"><a target="_blank" rel="nofollow" href="#" title="Youtube"><span><i class="icon fa fa-youtube-play" aria-hidden="true"></i></span></a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 no-padding">
+                            <div class="clearfix payment-methods">
+                                <ul>
+                                    <li>
+                                        <img src="/assets/images/payments/1.png" alt=""></li>
+                                    <li>
+                                        <img src="/assets/images/payments/3.png" alt=""></li>
+                                    <li>
+                                        <img src="/assets/images/payments/4.png" alt=""></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="col-xs-12 col-sm-12 no-padding social">
+                            <center><p>ИП Вязникова Нина Васильевна ОГРНИП: 319645100047738 ИНН: 381913646349</p></center>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- ============================================== FOOTER : КОНЕЦ =================================================================================================== -->
+            
+            <!-- ============================================== JavaScripts ====================================================================================================== -->
+            <script src="/assets/js/jquery-1.11.1.min.js"></script>
+                <script src="/assets/js/bootstrap.min.js"></script>
+                <script src="/assets/js/bootstrap-hover-dropdown.min.js"></script>
+                <script src="/assets/js/owl.carousel.min.js"></script>
+                <script src="/assets/js/echo.min.js"></script>
+                <script src="/assets/js/jquery.easing-1.3.min.js"></script>
+                <script src="/assets/js/bootstrap-slider.min.js"></script>
+                <script src="/assets/js/jquery.rateit.min.js"></script>
+                <script type="text/javascript" src="/assets/js/lightbox.min.js"></script>
+                <script src="/assets/js/bootstrap-select.min.js"></script>
+                <script src="/assets/js/wow.min.js"></script>
+                <script src="/assets/js/scripts.js"></script>
+        </div>
+        
+    </form>
+	<script type='text/javascript'>
+(function () {
+    window['yandexChatWidgetCallback'] = function() {
+        try {
+            window.yandexChatWidget = new Ya.ChatWidget({
+                guid: '1bf751db-b51d-4d4a-86ba-4d7910e9c694',
+                buttonText: 'Напишите нам, мы в сети!',
+                title: 'Новый чат',
+                theme: 'dark',
+                collapsedDesktop: 'never',
+                collapsedTouch: 'always'
+            });
+        } catch(e) { }
+    };
+    var n = document.getElementsByTagName('script')[0],
+        s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://chat.s3.yandex.net/widget.js';
+    n.parentNode.insertBefore(s, n);
+})();
+</script>
+</body>
+</html>
